@@ -16,37 +16,39 @@ int main(void)
 
 	char prompt[] = "samjake> ";
 
-	size_t num = 0;
-
-	char *argv[2];
-
-	argv[0] = "/bin/sh";
-	argv[1] = NULL;
-
-
+	int num = 0;
 
 	char *cmdline = malloc(sizeof(char) *  MAXLINE);
+
+	/*char **argv;*/
+
+	
+	/*argv[1] = NULL;*/
+
+
+
 
 	while (1)
 	{
 
 
 		_printf("%s", prompt);
+		
 		num = getline(&cmdline, &MAXLINE, stdin);
-		execve(argv[0], argv, NULL);
-
-		if (feof(stdin)) {
-                 _printf("\n");
-                 exit(0);
-		}
-		if (num == -1)
+		
+		if (num == EOF)
 		{
-		perror("No such file or directory");
+		free(cmdline);
+		exit(0);
 		}
+
+		/*argv[0] = cmdline;*/
+		/*execve(argv[0], argv, NULL);*/
+		
 	cmdline[strlen(cmdline)-1] = '\0';
 
 	}
 
+	free(cmdline);
 	return (0);
 }
-
