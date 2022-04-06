@@ -1,6 +1,12 @@
 #ifndef SHELL_H                                                                                                  
 #define SHELL_H                                                                                                  
-                                                                                                                 
+               
+
+/*macro definitioins*/
+#define Exit_success 0
+#define Exit_failure -1
+/*#define prompt "$ "*/
+#define Max_tokens 5
 /* header files */                                                                                               
 #include <stdio.h>                                                                                               
 #include <stdlib.h>                                                                                              
@@ -21,5 +27,5 @@ int _printf(const char *format, ...);
 int _numbers(va_list arg, int *k);
 int _string(va_list p, int *k);
 int _char(va_list p, int *k);
-
+/*int main (int argc, **argv, **env*/
 #endif /* SHELL_H */

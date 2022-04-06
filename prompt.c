@@ -10,20 +10,15 @@
 * Return: Command line
 */
 
-int main(void)
+int main()
 {
-	size_t MAXLINE = 1024;
+	size_t MAXLINE = 10;
 
 	char prompt[] = "samjake> ";
 
 	int num = 0;
 
 	char *cmdline = malloc(sizeof(char) *  MAXLINE);
-
-	/*char **argv;*/
-
-	
-	/*argv[1] = NULL;*/
 
 
 
@@ -41,10 +36,6 @@ int main(void)
 		free(cmdline);
 		exit(0);
 		}
-
-		/*argv[0] = cmdline;*/
-		/*execve(argv[0], argv, NULL);*/
-		
 	cmdline[strlen(cmdline)-1] = '\0';
 
 	}
